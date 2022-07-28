@@ -1,0 +1,6 @@
+.practica {
+    margin: 50px;
+    padding: 50px;
+    background: rgb(190,43,169);
+background: linear-gradient(90deg, rgba(190,43,169,1) 49%, rgba(57,114,210,1) 92%);
+}
