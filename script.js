@@ -12,9 +12,9 @@ for (let i=2; i <= 10 ; i++) {
 var culpable = window.prompt("¿eres culpable?"); // si, no
 
 	if(culpable=="si"){
-		document.write("irás a la cárcel");
+		document.write("vas a la cárcel");
 	}else if(culpable=="no"){
-		document.write("irás a casa");
+		document.write("vas a casa");
 	}else{
 		document.write("la documentación por favor");
 	}
