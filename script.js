@@ -24,9 +24,12 @@
 // ENTREGA 2
 
 let nota1, nota2, nota3;
-nota1 = prompt('Ingrese 1ra. nota:');
-nota2 = prompt('Ingrese 2da. nota:');
-nota3 = prompt('Ingrese 3ra. nota:');
+alert("Ingresa tus notas");
+nota1 = prompt('Ingresa la 1ra. nota:');
+
+nota2 = prompt('Ingresa la 2da. nota:');
+
+nota3 = prompt('Ingresa la 3ra. nota:');
 
 nota1 = parseInt(nota1);
 nota2 = parseInt(nota2);
