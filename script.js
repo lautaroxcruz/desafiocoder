@@ -18,3 +18,5 @@ var culpable = window.prompt("¿eres culpable?"); // si, no
 	}else{
 		document.write("la documentación por favor");
 	}
+
+	
