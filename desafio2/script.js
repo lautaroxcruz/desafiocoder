@@ -3,8 +3,8 @@
 
 
 
-//ingreso cantidad de productos
-let numAdd = parseInt(prompt("Ingrese la cantidad de productos a comprar:(Solo numeros)"));
+//cantidad de productos
+let numAdd = parseInt(prompt("Ingrese la cantidad de productos que desee comprar:(ingrese solo numeros)"));
 
 //precios
 let precioProductos = 0;
@@ -18,9 +18,9 @@ for (let i = 0; i < numAdd; i++) {
 }
 
 //calculando descuento en productos
-if (numAdd < 3) {
+if (numAdd < 2) {
     preciofinal = precioProductos;
-} else if (numAdd >= 3 && numAdd <= 5) {
+} else if (numAdd >= 2 && numAdd <= 5) {
     let descuento = (precioProductos * 10) / 100;
     preciofinal = precioProductos - descuento;
 } else if (numAdd >= 6) {
