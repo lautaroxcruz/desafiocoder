@@ -5,46 +5,24 @@
 //>>Ejemplo:
 //Podemos crear arrays para los objetos identificados en el simulador de la clase anterior, Ejemplo: Array de Productos, Array de Personas,Array de Libros, Array de Autos,  Array de Comidas,  Array de Bebidas, Array de Tareas, etc.
 
-let granosCafe = [
-    {
-      nombre: Perú,
-      ubicacion: "Villa Rica",
-      cantidad: "250G",
-      tipoDeTostado: "Tueste claro",
-      puntuacion: 86,
-      precioFinal: "$3.200",
-   
-    },
-   
-    {
-      nombre: Colombia,
-      ubicacion: "Tolima",
-      cantidad: "250G",
-      tipoDeTostado: "Tueste medio",
-      puntuacion: 84,
-      precioFinal: "$2.700",
-    },
+let Cafe = [
   {
-    nombre: Guatemala,
-    ubicacion: "HUEHUETENANGO",
-    cantidad: "250G",
-    tipoDeTostado: "Tueste claro",
-    puntuacion: 86,
-    precioFinal: "$3.200",
+      nombre:"PERÚ ",
+      peso:"250G",
+      precio: 3200
   },
-   
   {
-    nombre: PAPÚANUEVAGUINEA,
-    ubicacion: "WAHGI VALLEY",
-    cantidad: "250G",
-    tipoDeTostado: "TUESTE CLARO",
-    puntuacion: 86.50,
-    precioFinal: "$3.900",
+      nombre:"COLOMBIA",
+      peso:"250G",
+      precio:2700
+  },
+  {
+      nombre:"GUATEMALA",
+      cantidad:"250G",
+      precio:3200
   }
-  ]
-   
-  let compra=parseInt(prompt("¡Hola! ¿te gustaría adquirir alguna variedad de cafe? \ningrese el numero del producto que desee \n1-Perú\n2-Colombia\n3-Guatemala\n4-PAPÚANUEVAGUINEA\n5-Solo observo :)"));
-  if(compra<4){
-      alert("el valor a pagar es de $"+granosCafe[compra-1].precioFinal)
-  };
-  
+]
+let compra=parseInt(prompt("Hola, bienvenido a Coffeeshop! le gustaría adquirir alguna variedad? \ningrese el numero del producto que desee \n1-Peru\n2-Colombia\n3-Guatemala\n4-solo estoy viendo :)"));
+if(compra<4){
+  alert("el valor a pagar es de $"+Cafe[compra-1].precio)
+}
