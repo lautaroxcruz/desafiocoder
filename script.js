@@ -56,25 +56,43 @@ calcular3cuotas(preciofinal);
 
 // ENTREGA 3 
 
-//aplicar arrays en objetos como por ejemplo en bebidas 
-$(document).ready(function() {
-    $("#sidebarCollapse").on("click", function() {
-      $("#sidebar").addClass("active");
-    });
-  
-    $("#sidebarCollapseX").on("click", function() {
-      $("#sidebar").removeClass("active");
-    });
-  
-    $("#sidebarCollapse").on("click", function() {
-      if ($("#sidebar").hasClass("active")) {
-        $(".overlay").addClass("visible");
-        console.log("it's working!");
-      }
-    });
-  
-    $("#sidebarCollapseX").on("click", function() {
-      $(".overlay").removeClass("visible");
-    });
-  });
+// Array en granos de cafe 
+
+let granosCafe = [
+  {
+    nombre: Perú,
+    ubicacion: "Villa Rica",
+    cantidad: "250G", 
+    tipoDeTostado: "Tueste claro", 
+    puntuacion: 86,
+    precioFinal: "$3.200",
+
+  },
+
+  {
+    nombre: Colombia,
+    ubicacion: "Tolima",
+    cantidad: "250G", 
+    tipoDeTostado: "Tueste medio", 
+    puntuacion: 84,
+    precioFinal: "$2.700",
+  },
+{
+  nombre: Guatemala,
+  ubicacion: "HUEHUETENANGO",
+  cantidad: "250G",
+  tipoDeTostado: "Tueste claro",
+  puntuacion: 86,
+  precioFinal: "$3.200",
+}
+{
+  nombre: PAPÚA NUEVA GUINEA ,
+  ubicacion: "WAHGI VALLEY",
+  cantidad: "250G",
+  tipoDeTostado: "TUESTE CLARO",
+  puntuacion: 86.50,
+  precioFinal: "$3.900",
+}
+]
+
   
