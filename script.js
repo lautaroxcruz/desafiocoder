@@ -96,7 +96,7 @@ let granosCafe = [
 }
 ]
 
-let compra=parseInt(prompt("¡Hola! ¿te gustaría adquirir alguna variedad de cafe? \ningrese el numero del producto que desee \n1-Perú\n2-Colombia\n3-Guatemala\n4-PAPÚANUEVAGUINEA\n5-solo estoy viendo :)"));
+let compra=parseInt(prompt("¡Hola! ¿te gustaría adquirir alguna variedad de cafe? \ningrese el numero del producto que desee \n1-Perú\n2-Colombia\n3-Guatemala\n4-PAPÚANUEVAGUINEA\n5-Solo observo :)"));
 if(compra<4){
     alert("el valor a pagar es de $"+granosCafe[compra-1].precioFinal)
 };
