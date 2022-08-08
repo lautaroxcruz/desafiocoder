@@ -53,7 +53,11 @@ function calcular3notas(num1) {
 
 calcular3cuotas(preciofinal);
 
-// ENTREGA 3 
+
+
+
+
+// ENTREGA 4 
 
 // Array en granos de cafe 
 
