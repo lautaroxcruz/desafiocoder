@@ -37,10 +37,10 @@ nota3 = parseInt(nota3);
 let pro;
 pro = (nota1 + nota2 + nota3) / 3;
 if (pro >= 7) {
-    document.write('¡Promocionaste!');
+   document.write('¡Promocionaste!');
 } else {
     if (pro >= 4) {
-        document.write('Regular');
+       document.write('Regular');
     } else {
         document.write('Desaprobado');
     }
@@ -84,9 +84,10 @@ let granosCafe = [
   tipoDeTostado: "Tueste claro",
   puntuacion: 86,
   precioFinal: "$3.200",
-}
+},
+
 {
-  nombre: PAPÚA NUEVA GUINEA ,
+  nombre: PAPÚANUEVAGUINEA,
   ubicacion: "WAHGI VALLEY",
   cantidad: "250G",
   tipoDeTostado: "TUESTE CLARO",
@@ -94,5 +95,11 @@ let granosCafe = [
   precioFinal: "$3.900",
 }
 ]
+
+let compra=parseInt(prompt("¡Hola! ¿te gustaría adquirir alguna variedad de cafe? \ningrese el numero del producto que desee \n1-Perú\n2-Colombia\n3-Guatemala\n4-PAPÚANUEVAGUINEA\n5-solo estoy viendo :)"));
+if(compra<4){
+    alert("el valor a pagar es de $"+granosCafe[compra-1].precioFinal)
+}
+
 
   
