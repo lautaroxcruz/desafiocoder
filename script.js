@@ -22,8 +22,8 @@
 
 
 // ENTREGA 2
-
-let nota1, nota2, nota3;
+function
+let (nota1, nota2, nota3);
 alert("Ingresa tus notas");
 nota1 = prompt('Ingresa la 1ra. nota:');
 
@@ -45,3 +45,36 @@ if (pro >= 7) {
         document.write('Desaprobado');
     }
 }
+
+// Funcion 
+function calcular3notas(num1) {
+    let notas = num1 / 3;
+    alert("La calificacion final de las tres notas" + notas);
+}
+
+calcular3cuotas(preciofinal);
+
+// ENTREGA 3 
+
+//aplicar arrays en objetos como por ejemplo en bebidas 
+$(document).ready(function() {
+    $("#sidebarCollapse").on("click", function() {
+      $("#sidebar").addClass("active");
+    });
+  
+    $("#sidebarCollapseX").on("click", function() {
+      $("#sidebar").removeClass("active");
+    });
+  
+    $("#sidebarCollapse").on("click", function() {
+      if ($("#sidebar").hasClass("active")) {
+        $(".overlay").addClass("visible");
+        console.log("it's working!");
+      }
+    });
+  
+    $("#sidebarCollapseX").on("click", function() {
+      $(".overlay").removeClass("visible");
+    });
+  });
+  
