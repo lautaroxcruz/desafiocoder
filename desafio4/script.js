@@ -1,8 +1,9 @@
 // ENTREGA 4 
-
+//Codificar la funcionalidad inicial del simulador. 
+//Identificar el flujo de trabajo del script en términos de captura de entradas ingresadas por el usuario, procesamiento esencial del simulador y notificación de resultados en forma de salida.
 // Array en granos de cafe 
 
-//productos declarados
+//DECLARACION DE PRODUCTOS
 const Producto = [
   { nombre: "Colombia", precio: 630 },
   { nombre: "Peru", precio: 800 },
@@ -10,7 +11,7 @@ const Producto = [
   { nombre: "PAPÚA NUEVA GUINEA", precio: 620 },
 ];
 
-//clase constructora de nuevo objetos
+//CLASE PARA CONSTRUIR NUEVOS OBJETOS
 class cafe {
   constructor(nombre, precio) {
       this.nombre = nombre
@@ -18,7 +19,7 @@ class cafe {
   }
 }
 
-// funcion para agregar nuevas variedades de cafe
+// FUNCTION PARA AGG NUEVAS VARIEDADES DE CAFE
 function agregarcafe() {
   let nombreCafe = prompt("ingrese el nombre del cafe")
   let nuevoPrecio = prompt("ingrese el precio")
@@ -32,10 +33,10 @@ function agregarcafe() {
 
 }
 
-//Carrito
+//CARRITO
 let carrito = [];
 
-//funcion para agregar al carro
+//FUNCTION PARA AGG AL CARRO
 const addCarrito = () => {
   let nombre = prompt("ingrese una variedad")
   let resultado = Producto.find((n) => n.nombre.toLowerCase() === nombre.toLowerCase());
@@ -49,16 +50,16 @@ const addCarrito = () => {
   }
 };
 
-//funcion precio final
+//PRECIO FINAL FUNCTION
 function precioFinal() {
   let totalPrecios = carrito.reduce(((acumulador, carrito) => acumulador + carrito.precio), 0);
   return totalPrecios;
 }
 
-//interacion con el usuario
+// interaccion con el usuarioo 
 let proceso = true;
 do {
-  let intUsuario = prompt("Desea comprar(Si/No) o Agregar un producto a stock(ADD)").toLowerCase()
+  let intUsuario = prompt("Desea comprar(Si/No) o Agregar un producto a stock").toLowerCase()
 
   while (intUsuario != "si" && intUsuario != "no" && intUsuario != "add") {
       alert("Por favor ingrese una opcion")
@@ -86,15 +87,15 @@ do {
 
       //agregar variedad de cafe a productos
       do {
-          agregarlibro();
-          alert("Libro agregados")
-          let afirmativo = prompt("Desea agregar otro libro?(Si/No)").toUpperCase();
+          agregarcafe();
+          alert("Cafe agregados")
+          let afirmativo = prompt("Desea agregar otro Cafe?(Si/No)").toUpperCase();
           if (afirmativo == "NO") {
               continuar = false;
 
           }
       } while (continuar == true)
-      alert("Libro/s agregados");
+      alert("Cafe/s agregados");
       let seguir = prompt("Desea continuar en la pagina?(Si/No)").toUpperCase
       if (seguir == "NO") {
           proceso = false;
