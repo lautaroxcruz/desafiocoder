@@ -5,10 +5,10 @@
 
 //DECLARACION DE PRODUCTOS
 const Producto = [
-  { nombre: "Colombia", precio: 630 },
-  { nombre: "Peru", precio: 800 },
-  { nombre: "Guatemala", precio: 900 },
-  { nombre: "PAPÚA NUEVA GUINEA", precio: 620 },
+  { nombre: "Colombia", precio: 2700 },
+  { nombre: "Peru", precio: 3200 },
+  { nombre: "Guatemala", precio: 3200 },
+  { nombre: "PAPÚA NUEVA GUINEA", precio: 3900 },
 ];
 
 //CLASE PARA CONSTRUIR NUEVOS OBJETOS
@@ -38,7 +38,7 @@ let carrito = [];
 
 //FUNCTION PARA AGG AL CARRO
 const addCarrito = () => {
-  let nombre = prompt("ingrese una variedad")
+  let nombre = prompt("Ingrese una variedad")
   let resultado = Producto.find((n) => n.nombre.toLowerCase() === nombre.toLowerCase());
 
 
