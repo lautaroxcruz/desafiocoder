@@ -1,4 +1,4 @@
-class elementoCarrito {
+class ElementoCarrito {
     constructor(producto, cantidad) {
         this.producto = producto;
         this.cantidad = cantidad;
@@ -20,11 +20,10 @@ class cafe {
 const producto = [];
 
 function cargarProductos() {
-    producto.push(new libro("Peru", 3200, "./img/martinfierro.jpg", 001));
-    producto.push(new libro("El diario de Ana Frank", 800, "./img/anafrank.jpg", 002));
-    producto.push(new libro("La Divina Comedia", 900, "./img/ladivinacomedia.png", 003));
-    producto.push(new libro("El Avaro", 620, "./img/elavaro.jpg", 004));
-    producto.push(new libro("La Politica", 780, "./img/lapolitica.png", 005));
+    producto.push(new libro("Perú", 1200, "./img/peru.png", 001));
+    producto.push(new libro("Colombia", 3200, "./img/colombia.png", 002));
+    producto.push(new libro("Guatemala", 1900, "./img/guatemala.png", 003));
+    producto.push(new libro("Papua Nueva Guinea", 1200, "./img/papua-nueva-guinea.png", 004));
 }
 cargarProductos();
 
@@ -134,3 +133,5 @@ function precioFinal() {
 
 
 }
+
+
