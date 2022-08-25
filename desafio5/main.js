@@ -1,3 +1,5 @@
+let carrito = JSON.parse(localStorage.getItem("carrito"));
+
 class ElementoCarrito {
     constructor(producto, cantidad) {
         this.producto = producto;
@@ -5,7 +7,7 @@ class ElementoCarrito {
     }
 }
 
-//clase constructora de nuevo objetos
+//clase de nuevo objetos
 class cafe {
     constructor(nombre, precio, foto, id) {
         this.nombre = nombre
@@ -16,14 +18,14 @@ class cafe {
 }
 
 
-//productos ya declarados
+//productos declarados
 const producto = [];
 
 function cargarProductos() {
-    producto.push(new libro("Perú", 1200, "./img/peru.png", 001));
-    producto.push(new libro("Colombia", 3200, "./img/colombia.png", 002));
-    producto.push(new libro("Guatemala", 1900, "./img/guatemala.png", 003));
-    producto.push(new libro("Papua Nueva Guinea", 1200, "./img/papua-nueva-guinea.png", 004));
+    producto.push(new cafe("Perú", 1200, "./img/peru.png", 001));
+    producto.push(new cafe("Colombia", 3200, "./img/colombia.png", 002));
+    producto.push(new cafe("Guatemala", 1900, "./img/guatemala.png", 003));
+    producto.push(new cafe("Papua Nueva Guinea", 1200, "./img/papua-nueva-guinea.png", 004));
 }
 cargarProductos();
 
@@ -50,7 +52,14 @@ function dibujarCarrito() {
 }
 
 //Carrito
-let carrito = [];
+if (carrito) {
+    carrito = JSON.parse(localStorage.getItem("carrito"));
+    console.log(carrito);
+    //cargarlos en la tabla-Tarea
+} else {
+    carrito = [];
+}
+
 
 const contenedorCarritoCompras = document.querySelector('#items');
 const contenedorDeProductos = document.getElementsByClassName("row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center");
@@ -58,6 +67,8 @@ const contenedorDeProductos = document.getElementsByClassName("row gx-4 gx-lg-5 
 const addProductos = contenedorDeProductos[0];
 
 function crearCard(producto) {
+
+
     //footer card
     let footerCard = document.createElement("div");
     footerCard.className = "card-footer p-4 pt-0 border-top-0 bg-transparent"
@@ -93,18 +104,31 @@ function crearCard(producto) {
     colum.className = "col mb-5";
     colum.append(carta);
 
+    //dibujado desde el storage
+    let total = precioFinal();
+    let precioTotal = document.getElementById("precioTotal");
+    precioTotal.innerHTML = "$" + total;
+    dibujarCarrito();
+
     //agregar algunos eventos
     botonAgregar.onclick = () => {
-        //alert("Hiciste click en el producto" + producto.nombre);
+
+        //agregado el sweetalert
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Agregado al carrito',
+            showConfirmButton: false,
+            timer: 1000
+        })
 
         let elementoCarrito = new ElementoCarrito(producto, 1);
-        console.log(elementoCarrito);
         carrito.push(elementoCarrito);
         let total = precioFinal();
         let precioTotal = document.getElementById("precioTotal");
         precioTotal.innerHTML = "$" + total;
-        console.log(carrito);
         dibujarCarrito();
+        localStorage.setItem("carrito", JSON.stringify(carrito));
     }
 
     return carta;
