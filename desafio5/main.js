@@ -1,5 +1,4 @@
 let carrito = JSON.parse(localStorage.getItem("carrito"));
-
 class ElementoCarrito {
     constructor(producto, cantidad) {
         this.producto = producto;
@@ -52,6 +51,7 @@ function dibujarCarrito() {
 }
 
 //Carrito
+
 if (carrito) {
     carrito = JSON.parse(localStorage.getItem("carrito"));
     console.log(carrito);
@@ -67,8 +67,6 @@ const contenedorDeProductos = document.getElementsByClassName("row gx-4 gx-lg-5 
 const addProductos = contenedorDeProductos[0];
 
 function crearCard(producto) {
-
-
     //footer card
     let footerCard = document.createElement("div");
     footerCard.className = "card-footer p-4 pt-0 border-top-0 bg-transparent"
@@ -103,16 +101,13 @@ function crearCard(producto) {
     let colum = document.createElement('div');
     colum.className = "col mb-5";
     colum.append(carta);
-
     //dibujado desde el storage
     let total = precioFinal();
     let precioTotal = document.getElementById("precioTotal");
     precioTotal.innerHTML = "$" + total;
     dibujarCarrito();
-
     //agregar algunos eventos
     botonAgregar.onclick = () => {
-
         //agregado el sweetalert
         Swal.fire({
             position: 'top-end',
@@ -135,27 +130,26 @@ function crearCard(producto) {
 
 }
 
+
 function dibujarCatalogoProductos() {
     addProductos.innerHTML = "";
     producto.forEach(
         (producto) => {
-            let contenedorCarta = crearCard(producto)
-                ;
+            let contenedorCarta = crearCard(producto);
             addProductos.append(contenedorCarta);
         }
     );
 
 };
-
 dibujarCatalogoProductos();
 
 //funcion preciofinal
 function precioFinal() {
     let totalPrecios = carrito.reduce(((acumulador, carrito) => acumulador + carrito.producto.precio), 0);
-    console.log(totalPrecios);
     return totalPrecios;
 
 
 }
+
 
 
