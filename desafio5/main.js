@@ -6,7 +6,7 @@ if (carrito) {
 } else {
     carrito = [];
 } */
-let carrito = JSON.parse(localStorage.getItem("carrito"));
+const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 class ElementoCarrito {
     constructor(producto, cantidad) {
@@ -15,7 +15,7 @@ class ElementoCarrito {
     }
 }
 
-//clase de nuevo objetos
+//clase constructora de nuevo objetos
 class cafe {
     constructor(nombre, precio, foto, id) {
         this.nombre = nombre
@@ -26,7 +26,7 @@ class cafe {
 }
 
 
-//productos declarados
+//productos ya declarados
 const producto = [];
 
 function cargarProductos() {
@@ -35,6 +35,7 @@ function cargarProductos() {
     producto.push(new cafe("Guatemala", 1900, "./img/guatemala.png", 003));
     producto.push(new cafe("Papua Nueva Guinea", 1200, "./img/papua-nueva-guinea.png", 004));
 }
+
 cargarProductos();
 
 
@@ -59,15 +60,6 @@ function dibujarCarrito() {
     contenedorCarritoCompras.innerHTML = renglonesCarrito;
 }
 
-//Carrito
-if (carrito) {
-    carrito = JSON.parse(localStorage.getItem("carrito"));
-    console.log(carrito);
-    //cargarlos en la tabla-Tarea
-} else {
-    carrito = [];
-}
-
 
 const contenedorCarritoCompras = document.querySelector('#items');
 const contenedorDeProductos = document.getElementsByClassName("row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center");
@@ -75,8 +67,6 @@ const contenedorDeProductos = document.getElementsByClassName("row gx-4 gx-lg-5 
 const addProductos = contenedorDeProductos[0];
 
 function crearCard(producto) {
-
-
     //footer card
     let footerCard = document.createElement("div");
     footerCard.className = "card-footer p-4 pt-0 border-top-0 bg-transparent"
@@ -111,24 +101,15 @@ function crearCard(producto) {
     let colum = document.createElement('div');
     colum.className = "col mb-5";
     colum.append(carta);
-
     //dibujado desde el storage
     let total = precioFinal();
     let precioTotal = document.getElementById("precioTotal");
     precioTotal.innerHTML = "$" + total;
     dibujarCarrito();
-
     //agregar algunos eventos
     botonAgregar.onclick = () => {
-
         //agregado el sweetalert
-        Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Agregado al carrito',
-            showConfirmButton: false,
-            timer: 1000
-        })
+        cartelAdd();
 
         let elementoCarrito = new ElementoCarrito(producto, 1);
         carrito.push(elementoCarrito);
@@ -143,27 +124,33 @@ function crearCard(producto) {
 
 }
 
+
 function dibujarCatalogoProductos() {
     addProductos.innerHTML = "";
     producto.forEach(
         (producto) => {
-            let contenedorCarta = crearCard(producto)
-                ;
+            let contenedorCarta = crearCard(producto);
             addProductos.append(contenedorCarta);
         }
     );
 
 };
-
 dibujarCatalogoProductos();
 
 //funcion preciofinal
 function precioFinal() {
     let totalPrecios = carrito.reduce(((acumulador, carrito) => acumulador + carrito.producto.precio), 0);
-    console.log(totalPrecios);
     return totalPrecios;
 
 
 }
-
-
+//funcion de cartel de Sweet
+function cartelAdd() {
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Agregado al carrito',
+        showConfirmButton: false,
+        timer: 1000
+    })
+}
