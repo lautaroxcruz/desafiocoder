@@ -1,3 +1,11 @@
+//Carrito
+
+/* let carrito = JSON.parse(localStorage.getItem("carrito"));
+if (carrito) {
+    carrito = JSON.parse(localStorage.getItem("carrito"));
+} else {
+    carrito = [];
+} */
 let carrito = JSON.parse(localStorage.getItem("carrito"));
 
 class ElementoCarrito {
