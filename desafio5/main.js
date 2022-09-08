@@ -38,7 +38,17 @@ function cargarProductos() {
 
 cargarProductos();
 
+//traigo de la api y lo pusheo a un array
+const librosApi = [];
 
+async function apiLibros() {
+    const APIGET = "./js/productos.json";
+    const resp = await fetch(APIGET);
+    const data = await resp.json();
+    data.forEach(e => producto.push(new libro(e.nombre, e.puntaje, e.precio, e.foto, e.id)))
+    /* producto.push(data); */
+    /* producto = productos.concat(librosApi); */
+}
 
 //funcion de dibujo de carrito
 function dibujarCarrito() {
@@ -125,10 +135,12 @@ function crearCard(producto) {
 }
 
 
-function dibujarCatalogoProductos() {
+async function dibujarCatalogoProductos() {
+    await apiLibros();
     addProductos.innerHTML = "";
     producto.forEach(
         (producto) => {
+            console.log(producto);
             let contenedorCarta = crearCard(producto);
             addProductos.append(contenedorCarta);
         }

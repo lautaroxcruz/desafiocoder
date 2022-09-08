@@ -1,0 +1,30 @@
+[
+    {
+        "nombre": "Peru",
+        "puntaje": "86",
+        "precio": "1200",
+        "foto": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/173/200/products/flatwhite_etiquetas-final-2-peru1-b66405e6bd42a6528116591093714892-1024-1024.png",
+        "id": "007"
+    },
+    {
+        "nombre": "Colombia",
+        "puntaje": "84",
+        "precio": "3200",
+        "foto": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/173/200/products/fw-etiquetas-mod-41-fb59f246f40f05924d16204371683882-1024-1024.png",
+        "id": "008"
+    },
+    {
+        "nombre": "Guatemala",
+        "puntaje": "86",
+        "precio": "1900",
+        "foto": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/173/200/products/flatwhite_etiquetas-guatemala1-8f27a3b300a00ec1db16545251544594-1024-1024.png",
+        "id": "009"
+    },
+    {
+        "nombre": "Papua Nueva Guinea",
+        "puntaje": "86.50",
+        "precio": "1200",
+        "foto": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/173/200/products/flatwhite_etiquetas-final-1-papua-nueva-guinea1-9babc155e55d3ef9ef16591086838958-1024-1024.png",
+        "id": "010"
+    }
+]
